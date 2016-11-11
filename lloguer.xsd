@@ -33,14 +33,22 @@ elementFormDefault="qualified">
 								<xsd:complexType>
 								    <xsd:simpleContent>
 								        <xsd:extension base="xsd:string">
-								            <xsd:attribute name="tractament" type="h:tractament" />
+								            <xsd:attribute name="tractament" type="h:tractament" use="required"/>
 								        </xsd:extension>
 								    </xsd:simpleContent>
 								</xsd:complexType>
 						   </xsd:element>
-							<xsd:element name="telefon" type="xsd:integer"/>
+							<xsd:element name="telefon">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:integer">
+										<xsd:minInclusive value="971230000"/>
+										<xsd:maxInclusive value="971239999"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+
 							<xsd:element name="email" type="xsd:string"/>
-							<xsd:element name="tipusClient" type="xsd:string"/>
+							<xsd:element name="tipusClient" type="h:tipus"/>
 							<xsd:element name="lloguer" maxOccurs="unbounded">
 								<xsd:complexType>
             					<xsd:all>
@@ -60,6 +68,11 @@ elementFormDefault="qualified">
 <xsd:simpleType name="tractament">
     <xsd:restriction base="xsd:string">
         <xsd:pattern value="[a-zA-Z]{2}|[a-zA-Z]{3}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="tipus">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="Premium|Ocasional"/>
     </xsd:restriction>
 </xsd:simpleType>
 </xsd:schema>
