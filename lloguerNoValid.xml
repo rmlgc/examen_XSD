@@ -1,0 +1,56 @@
+<lloguerCotxes xmlns="http://www.iessonferrer.net/jgonzalez/lloguerCotxes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iessonferrer.net/jgonzalez/lloguerCotxes lloguer.xsd">
+	<cotxe matricula="4256DRL">
+		<marca>Seat</marca>
+		<model>Alhambra</model>
+		<equipacio>
+			<climatitzador>Si</climatitzador>
+			<airbagsLaterals>Si</airbagsLaterals>
+			<automatic>No</automatic>
+			<cadiraNinPetit>Opcional</cadiraNinPetit>
+		</equipacio>
+	</cotxe>
+	<cotxe matricula="5258DRL">
+		<marca>Volkswagen</marca>
+		<model>Golf</model>
+		<color>Negre</color>
+		<equipacio>
+			<climatitzador>Opcional</climatitzador>
+			<airbagsLaterals>Si</airbagsLaterals>
+			<automatic>Si</automatic>
+			<cadiraNinPetit>No</cadiraNinPetit>
+		</equipacio>
+	</cotxe>
+
+	<client dni="42568525z">
+		<nom tractament="Sr">Antoni Pascual</nom>
+		<telefon>666554433</telefon>
+		<email>apascual@gmail.com</email>
+		<tipusClient>Premium</tipusClient>
+		<lloguer>
+			<cotxe>5258DRL</cotxe>
+			<dataInici>2016-03-12</dataInici>
+			<dataFi>2016-03-20</dataFi>
+		</lloguer>
+		<lloguer>
+			<cotxe>5258DRL</cotxe>
+			<dataInici>2016-04-12</dataInici>
+			<dataFi>2016-04-20</dataFi>
+		</lloguer>
+		<lloguer>
+			<cotxe>5258DRL</cotxe>
+			<dataInici>2016-05-12</dataInici>
+			<dataFi>2016-05-20</dataFi>
+		</lloguer>
+	</client>
+	<client dni="42568536l">
+		<nom tractament="Sra">Marta Soler</nom>
+		<telefon>971239999</telefon>
+		<email>psoler@gmail.com</email>
+		<tipusClient>Ocasional</tipusClient>
+		<lloguer>
+			<cotxe>4256DRL</cotxe>
+			<dataInici>2015-07-14</dataInici>
+			<dataFi>2015-07-21</dataFi>
+		</lloguer>
+	</client> 
+</lloguerCotxes>
