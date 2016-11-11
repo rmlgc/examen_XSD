@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:h="http://www.iessonferrer.net/jgonzalez/lloguerCotxes"
+targetNamespace="http://www.iessonferrer.net/jgonzalez/lloguerCotxes"
+elementFormDefault="qualified">
+	<xsd:element name="lloguerCotxes">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="cotxe" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="marca" type="xsd:string"/>
+							<xsd:element name="model" type="xsd:string"/>
+							<xsd:element name="color" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="equipacio">
+								<xsd:complexType>
+            					<xsd:all>
+										<xsd:element name="climatitzador" type="xsd:string"/>
+										<xsd:element name="airbagsLaterals" type="xsd:string"/>
+										<xsd:element name="automatic" type="xsd:string"/>
+										<xsd:element name="cadiraNinPetit" type="xsd:string"/>
+									</xsd:all>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="matricula"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="client" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="nom" maxOccurs="10">
+								<xsd:complexType>
+								    <xsd:simpleContent>
+								        <xsd:extension base="xsd:string">
+								            <xsd:attribute name="tractament" type="h:tractament" />
+								        </xsd:extension>
+								    </xsd:simpleContent>
+								</xsd:complexType>
+						   </xsd:element>
+							<xsd:element name="telefon" type="xsd:integer"/>
+							<xsd:element name="email" type="xsd:string"/>
+							<xsd:element name="tipusClient" type="xsd:string"/>
+							<xsd:element name="lloguer" maxOccurs="unbounded">
+								<xsd:complexType>
+            					<xsd:all>
+										<xsd:element name="cotxe" type="xsd:string"/>
+										<xsd:element name="dataInici" type="xsd:date"/>
+										<xsd:element name="dataFi" type="xsd:date"/>
+									</xsd:all>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+							<xsd:attribute name="dni"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+<xsd:simpleType name="tractament">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[a-zA-Z]{2}|[a-zA-Z]{3}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>
